@@ -1,0 +1,33 @@
+h1{
+    font-family: "finger";
+    font-size: 45px;
+    padding-top: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    color:rgb(63, 81, 181);
+}
+
+.conten{
+    font-family: "finger";
+    font-size: 15px;
+    font-size: 17px;
+    color: black;
+}
+
+.contenlabel{
+    font-family: "finger";
+    color: rgb(99, 98, 98)
+}
+
+.contenButton{
+    font-family: "finger";
+    color:white;
+    font-size: 15px;
+}
+
+.form{
+padding-left: 40px;
+}
+  

@@ -1,0 +1,31 @@
+<div *ngIf="oneUser">
+  <h1>Edit: {{oneUser.name}}</h1>
+
+
+
+<form #editUser="ngForm" (ngSubmit)="onSubmit(editUser)" class="form">
+
+  <div fxLayout="row wrap" fxlayout.lt-md="column wrap" fxLayoutGap="15px">
+    <mat-form-field fxFlex="50">
+      <mat-label class="contenlabel" for="name">Name</mat-label>
+      <input matInput class="conten" id="name" name="name" [(ngModel)]="oneUser.name" required>
+    </mat-form-field>
+
+    <mat-form-field fxFlex="50">
+      <mat-label class="contenlabel" for="email">E-mail</mat-label>
+      <input  class="conten" type="email" matInput id="email" name="email" [(ngModel)]="oneUser.email" required>
+    </mat-form-field>
+
+    <mat-form-field fxFlex="50">
+      <mat-label class="contenlabel" for="role">Role</mat-label>
+      <mat-select class="conten" id="role" name="role" [(ngModel)]="oneUser.role" required>
+        <mat-option  class="conten" *ngFor="let op of options" [value]="op.value">
+          {{op.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </div>
+  <button class="contenButton" type="submit" mat-raised-button color="primary" [disabled]="!editUser.form.valid">Edit user</button>
+</form>
+</div>

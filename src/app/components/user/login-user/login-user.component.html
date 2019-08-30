@@ -1,0 +1,26 @@
+<div>
+  <h1>{{title}}</h1>
+</div>
+
+<div class="container">
+  <h2>Sing in</h2>
+  <form #login="ngForm" (ngSubmit)="onSubmit(login)" class="form">
+
+    <div fxLayout="row wrap" fxlayout.lt-md="column wrap" fxLayoutGap="50px">
+      <mat-form-field class="conten" fxFlex="50">
+        <mat-label  class="contenlabel" for="email">E-mail</mat-label>
+        <input matInput id="email" name="email" #email="ngModel" [(ngModel)]="loginUser.email" required>
+      </mat-form-field>
+  
+      <mat-form-field fxFlex="50" class="conten">
+          <mat-label class="contenlabel" >Password</mat-label>
+          <input type="password" matInput id="password" name="password" #password="ngModel" [(ngModel)]="loginUser.password" required>
+        </mat-form-field>
+  
+    </div>
+    <button class="contenButton" type="submit" mat-raised-button color="primary" [disabled]="!login.form.valid" >Sing In</button>
+  </form>
+  
+</div>
+
+

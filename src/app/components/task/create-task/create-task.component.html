@@ -1,0 +1,31 @@
+<ng-container *ngIf="role == 'ADMIN_ROLE'; else elseTemplate">
+
+  <div>
+    <h1>{{title}}</h1>
+  </div>
+  <form #createTask="ngForm" (ngSubmit)="onSubmit(createTask)" class="form">
+
+    <div fxLayout="row wrap" fxlayout.lt-md="column wrap" fxLayoutGap="15px">
+      <mat-form-field class="conten" fxFlex="50">
+        <mat-label class="contenlabel" for="name">Name</mat-label>
+        <input matInput id="name" name="name" #name="ngModel" [(ngModel)]="objTask.name" required>
+      </mat-form-field>
+
+      <mat-form-field fxFlex="50" class="conten">
+        <mat-label class="contenlabel">Description</mat-label>
+        <textarea matInput id="description" name="description" [(ngModel)]="objTask.description" required></textarea>
+      </mat-form-field>
+
+    </div>
+    <button class="contenButton" type="submit" mat-raised-button color="primary" [disabled]="!createTask.form.valid">Add
+      Task</button>
+  </form>
+</ng-container>
+
+
+<ng-template #elseTemplate>
+  <div class="noAdmin">
+    <p>Sorry! you aren't admin</p>
+    <img class="img" src="../../../../assets/img/prohibido.png" alt="">
+  </div>
+</ng-template>

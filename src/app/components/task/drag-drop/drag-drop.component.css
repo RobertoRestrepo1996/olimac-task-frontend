@@ -1,0 +1,115 @@
+.example-container {
+    width: 250px;
+    max-width: 100%;
+    margin: 0 25px 25px 0;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 70px;
+  }
+  
+  .example-list {
+    border: solid 1px #ccc;
+    min-height: 60px;
+    background: white;
+    border-radius: 4px;
+    overflow: hidden;
+    display: block;
+  }
+  
+  .example-box {
+    padding: 20px 10px;
+    border-bottom: solid 1px #ccc;
+    color: rgba(0, 0, 0, 0.87);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    cursor: move;
+    background: white;
+    font-size: 14px;
+  }
+  
+  .cdk-drag-preview {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+                0 8px 10px 1px rgba(0, 0, 0, 0.14),
+                0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  }
+  
+  .cdk-drag-placeholder {
+    opacity: 0;
+  }
+  
+  .cdk-drag-animating {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+  
+  .example-box:last-child {
+    border: none;
+  }
+  
+  .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+    transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+  }
+
+  h1{
+    font-family: "finger";
+    font-size: 45px;
+    padding-top: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 1px;
+    text-align: center;
+    color:rgb(63, 81, 181);
+}
+
+.open{
+  font-family: "finger";
+  background: url(../../../../assets/img/pattern.png);
+  font-size: 17px;
+  color: #3f51b5;
+}
+
+.progress{
+  font-family: "finger";
+  background: url(../../../../assets/img/pattern.png);
+  font-size: 17px;
+  color: #ff4081;
+}
+
+.completed  {
+  font-family: "finger";
+  background: url(../../../../assets/img/pattern.png);
+  font-size: 17px;
+  color: rgb(24, 209, 33);
+}
+.noAdmin{
+  min-height: 100px;
+  height: auto;
+  background: #EDEDE7;
+  width: 65%;
+  margin: 0px auto;
+  box-shadow: 0px 0px 40px black;
+  border-left: 1px solid #b7b7b7;
+  border-right: 1px solid #b7b7b7;
+  border-bottom: 3px solid #b7b7b7;
+  border-radius: 80px;
+  padding-top: 0px;
+  margin-top: 125px;
+}
+
+.noAdmin p{
+  font-family: "finger";
+  color:red;
+  font-size: 50px;
+  padding-left: 37px;
+}
+
+.img{
+width: 35%;
+height: 35%;
+padding-left: 232px;
+padding-bottom: 50px;
+}

@@ -1,0 +1,97 @@
+h1{
+    font-family: "finger";
+    font-size: 45px;
+    padding-top: 20px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    color:rgb(63, 81, 181);
+}
+
+.container{
+    padding: 50px;
+    padding-top: 10px;
+}
+
+.container .description{
+    text-align: justify;
+    float: left;
+    overflow: auto;
+    width: 52%;
+    max-height: 410px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 10px;
+    
+    
+}
+
+.container .userInTask{
+    list-style: none;
+    text-align: justify;
+    float: right;
+    overflow: auto;
+    width: 40%;
+    max-height: 335px;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: -10px;
+}
+
+.container .userInTask h3{
+    margin-right: 100px;
+    padding: 1px;
+}
+.sub{
+    margin-right: 100px;
+    margin-left: 640px;
+    margin-top: 47px;
+    padding: -1px;
+    margin-bottom: 0px;
+}
+
+.container .userInTask ul{
+    list-style: none;
+    margin: 0px;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.container .userInTask li {
+    float: left;
+    display: block;
+    padding: 1px;
+    text-decoration: none;
+    margin: -15px;
+  }
+
+  .container .userInTask p{
+    margin-left: 250px;
+    margin-top: -53px;
+    padding: 1px;
+  }
+
+  .userList{
+      width: 100%;
+      margin-top: 315px;
+  }
+.color{
+    background: rgb(39, 240, 39)
+}
+
+.conten{
+    font-family: "finger";
+    background: url(../../../../assets/img/pattern.png);
+    font-size: 17px;
+    color: black;
+}
+
+
+.mat-select-value{
+    font-family: "finger"; 
+}
+
+td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type, th.mat-header-cell:first-of-type{
+    padding-left: 100px;
+}

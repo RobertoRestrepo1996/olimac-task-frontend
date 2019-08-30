@@ -1,0 +1,55 @@
+<ng-container *ngIf="role == 'ADMIN_ROLE'; else elseTemplate">
+  <h1>List of Task's</h1>
+  <mat-form-field style="margin-left: 80%" class="conten">
+    <input matInput (keyup)="applyFilter($event.target.value)" placeholder="search...">
+  </mat-form-field>
+
+  <div fxLayout="row wrap" fxLayout.lt-md="column wrap">
+    <div style="width: 100%" fxFlex>
+      <table mat-table [dataSource]="packTask" style="width: 100%">
+
+        <ng-container matColumnDef="name">
+          <th class="conten" mat-header-cell *matHeaderCellDef> Name </th>
+          <td class="conten" mat-cell *matCellDef="let row"> {{row.name}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="state">
+          <th class="conten" mat-header-cell *matHeaderCellDef> State </th>
+          <td class="conten" mat-cell *matCellDef="let row"> {{row.state}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+          <th class="conten" mat-header-cell *matHeaderCellDef> Actions </th>
+          <td class="conten" mat-cell *matCellDef="let row">
+
+            <button mat-icon-button color="primary" [routerLink]="[ '/🏠/admin/task/edit-task',row._id]">
+              <mat-icon aria-label="Example icon-button with a heart icon">edit</mat-icon>
+            </button>
+
+            <button mat-icon-button color="accent" [routerLink]="[ '/🏠/admin/task/state-task',row._id]">
+              <mat-icon aria-label="Example icon-button with a heart icon">remove_red_eye</mat-icon>
+            </button>
+
+            <button (click)="onDeleteTask(row._id)" mat-icon-button color="warn">
+              <mat-icon aria-label="Example icon-button with a heart icon">delete</mat-icon>
+            </button>
+
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+        </tr>
+      </table>
+      <mat-paginator class="conten" [pageSizeOptions]="pageSizeOptions" showFirstLastButtons> </mat-paginator>
+    </div>
+
+  </div>
+</ng-container>
+
+  <ng-template #elseTemplate>
+    <div class="noAdmin">
+      <p>Sorry! you aren't admin</p>
+      <img class="img" src="../../../../assets/img/prohibido.png" alt="">
+    </div>
+  </ng-template>

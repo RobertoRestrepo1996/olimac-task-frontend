@@ -1,0 +1,22 @@
+<div *ngIf="oneTask">
+  <h1>Edit: {{oneTask.name}}</h1>
+
+  <form #editTask="ngForm" (ngSubmit)="onSubmit(editTask)" class="form">
+
+    <div fxLayout="row wrap" fxlayout.lt-md="column wrap" fxLayoutGap="15px">
+      <mat-form-field fxFlex="50">
+        <mat-label class="contenlabel" for="name">Name</mat-label>
+        <input  class="conten" matInput id="name" name="name" [(ngModel)]="oneTask.name" required>
+      </mat-form-field>
+
+      
+      <mat-form-field fxFlex="50">
+        <mat-label class="contenlabel" >Description</mat-label>
+        <textarea class="conten" matInput id="description" name="description" [(ngModel)]="oneTask.description"
+        required></textarea>
+      </mat-form-field>
+
+    </div>
+    <button class="contenButton" type="submit" mat-raised-button color="primary" [disabled]="!editTask.form.valid">Edit Task</button>
+  </form>
+</div>

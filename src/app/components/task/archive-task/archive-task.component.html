@@ -1,0 +1,47 @@
+<ng-container *ngIf="role == 'ADMIN_ROLE'; else elseTemplate">
+    <div *ngIf="nameTask">
+        <h1>Archive a task</h1> 
+   
+       <div class="example-container conten">
+           <h2 style="text-align: center">Completed</h2>
+           <div id="completed"
+             cdkDropList
+             #completedList="cdkDropList"
+             [cdkDropListData]="completed"
+             [cdkDropListConnectedTo]="[progressList]"
+             class="example-list"
+             (cdkDropListDropped)="drop($event)">
+             <div class="example-box" *ngFor="let item of completed; index as i" cdkDrag>{{completed[i].name}}</div>
+           </div>
+         </div>
+   
+         <div  class="example-container conten1">
+           <h2 style="text-align: center" >Archived</h2>
+           <div
+             cdkDropList id="archived"
+             #progressList="cdkDropList"
+             [cdkDropListData]="archived"
+             [cdkDropListConnectedTo]="[completedList]"
+             class="example-list"
+             (cdkDropListDropped)="drop($event)">
+             <div class="example-box" *ngFor="let item of archived; index as i" cdkDrag>{{archived[i].name}}</div>
+           </div>
+         </div>
+       
+   
+       
+         </div>
+</ng-container>
+
+<ng-template #elseTemplate>
+    <div class="noAdmin">
+        <p>Sorry! you aren't admin</p>
+        <img class="img" src="../../../../assets/img/prohibido.png" alt="">
+    </div>
+</ng-template>
+  
+
+
+
+
+

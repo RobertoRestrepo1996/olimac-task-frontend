@@ -1,0 +1,64 @@
+h1{
+    font-family: "finger";
+    font-size: 45px;
+    padding-top: 75px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 40px;
+    text-align: center;
+    color:rgb(63, 81, 181);
+}
+
+
+.conten{
+    font-family: "finger";
+    font-size: 15px;
+    font-size: 17px;
+    color: black;
+}
+
+.contenlabel{
+    font-family: "finger";
+    color: rgb(99, 98, 98);
+    width: 25%;
+}
+
+.contenButton{
+    font-family: "finger";
+    color:white;
+    font-size: 15px;
+}
+
+.mat-form-field{
+    text-align: center;
+    max-width: 80% !important
+}
+.form{
+padding-left: 100px;
+padding-right: 0px;
+}
+
+.container{
+    margin-top: 15px;
+    min-height: 300px;
+    height: auto;
+    background: #EDEDE7;
+    width: 45%;
+    margin: 0px auto;
+    box-shadow: 0px 0px 40px black;
+    border-left: 1px solid #b7b7b7;
+    border-right: 1px solid #b7b7b7;
+    padding-top: 0px;
+}
+
+.container h2{
+    font-family: "finger";
+    font-size: 30px;
+    padding-top: 30px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+    color:rgb(63, 81, 181);
+
+}

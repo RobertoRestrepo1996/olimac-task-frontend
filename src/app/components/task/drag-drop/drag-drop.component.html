@@ -1,0 +1,54 @@
+<ng-container *ngIf="role == 'USER_ROLE'; else elseTemplate">
+    <div *ngIf="nameTask">
+        <h1>¡Your tasks!</h1> 
+    <div class="example-container open" >
+        <h2 style="text-align: center">Open</h2>
+        <div id="open"
+          cdkDropList
+          #openList="cdkDropList"
+          [cdkDropListData]="open"
+          [cdkDropListConnectedTo]="[progressList]"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let item of open; index as i" cdkDrag>{{open[i].name}}</div>
+        </div>
+      </div>
+      
+      <div  class="example-container progress">
+        <h2 style="text-align: center">in-progress</h2>
+        <div
+          cdkDropList id="in-progress"
+          #progressList="cdkDropList"
+          [cdkDropListData]="inProgress"
+          [cdkDropListConnectedTo]="[openList, completedList]"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let item of inProgress; index as i" cdkDrag>{{inProgress[i].name}}</div>
+        </div>
+      </div>
+    
+      <div class="example-container completed">
+          <h2 style="text-align: center">Completed</h2>
+          <div id="completed"
+            cdkDropList
+            #completedList="cdkDropList"
+            [cdkDropListData]="completed"
+            [cdkDropListConnectedTo]="[progressList]"
+            class="example-list"
+            (cdkDropListDropped)="drop($event)">
+            <div class="example-box" *ngFor="let item of completed; index as i" cdkDrag>{{completed[i].name}}</div>
+          </div>
+        </div>
+    
+      </div>
+</ng-container>
+
+
+<ng-template #elseTemplate>
+    <div class="noAdmin">
+      <p>Sorry! you are admin</p>
+      <img class="img" src="../../../../assets/img/prohibido.png" alt="">
+    </div>
+  </ng-template>
+
+

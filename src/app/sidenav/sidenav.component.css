@@ -1,0 +1,67 @@
+
+.sidenav-container {
+   min-height: 615px;
+  height: auto;
+  box-shadow: 0px 0px 40px rgb(139, 129, 129);
+  /* background: rgba(255, 255, 255, 0.7); */
+  background: url(../../assets/img/pattern.png);
+}
+
+.sidenav {
+  width: 250px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.subItem{
+  margin-left: 30px;
+}
+
+.conten{
+  font-family: "finger";
+  font-size: 17px;
+  color:rgb(63, 81, 181);
+ 
+}
+
+.title{
+  font-family: "finger";
+  font-size: 30px
+}
+
+.logOut{
+  font-family: "finger";
+  font-size: 20px;
+  margin-left: 720px;
+  cursor: pointer;
+}
+
+.menu{
+  font-family: "finger";
+  font-size: 25px;
+  color:rgb(63, 81, 181);
+}
+
+.mat-list-item{
+  box-shadow: 0px 0px 40px rgb(139, 129, 129);
+}
+
+.mat-drawer{
+  background: url(../../assets/img/pattern.png);
+}
+
+.mat-toolbar.mat-primary{
+  position: fixed
+}
+
+
+
+

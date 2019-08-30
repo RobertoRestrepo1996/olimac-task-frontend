@@ -1,0 +1,65 @@
+<div *ngIf="oneTask" class="container">
+  <h1>{{oneTask.name}}</h1>
+
+
+  <div class="description">
+    <h2>Description of task</h2>
+    <p>{{oneTask.description}}</p>
+  </div>
+
+
+  <h2 class="sub">User on this task: </h2>
+  <div *ngIf="taskUser" class="userInTask">
+    
+    <ul>
+      <li *ngFor="let item of taskUser">
+
+        <h3>{{item.name}}</h3>
+        <p><button class="contenButton" mat-raised-button color="warn" (click)="OnDeleteUser(item._id)">Delete</button>
+        </p>
+
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="userList" *ngIf="oneTask">
+<h1>Add user to: {{oneTask.name}}</h1>
+<mat-form-field style="margin-left: 80% " class="conten">
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="search...">
+</mat-form-field>
+<div fxLayout="row wrap" fxLayout.lt-md="column wrap">
+  <div style="width: 100%" fxFlex>
+    <table mat-table [dataSource]="packUser" style="width: 100%">
+
+      <ng-container matColumnDef="name">
+        <th class="conten" mat-header-cell *matHeaderCellDef> Name </th>
+        <td class="conten" mat-cell *matCellDef="let row"> {{row.name}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th class="conten" mat-header-cell *matHeaderCellDef> E-mail </th>
+        <td class="conten" mat-cell *matCellDef="let row"> {{row.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th class="conten" mat-header-cell *matHeaderCellDef> Add User </th>
+        <td class="conten" mat-cell *matCellDef="let row">
+
+          <button (click)="onAddUser(row._id)" mat-icon-button class="color" color="primary">
+            <mat-icon aria-label="Example icon-button with a heart icon">person_add</mat-icon>
+          </button>
+
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;">
+      </tr>
+    </table>
+    <mat-paginator class="conten" [pageSizeOptions]="pageSizeOptions" showFirstLastButtons> </mat-paginator>
+  </div>
+
+</div>
+</div>
+

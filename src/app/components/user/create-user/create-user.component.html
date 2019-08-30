@@ -1,0 +1,44 @@
+<ng-container *ngIf="role == 'ADMIN_ROLE'; else elseTemplate">
+  <div>
+    <h1>Create a new user</h1>
+  </div>
+  <form #createUser="ngForm" (ngSubmit)="onSubmit(createUser)" class="form">
+
+    <div fxLayout="row wrap" fxlayout.lt-md="column wrap" fxLayoutGap="15px">
+      <mat-form-field class="conten" fxFlex="50">
+        <mat-label class="contenlabel" for="name">Name</mat-label>
+        <input matInput id="name" name="name" #name="ngModel" [(ngModel)]="objUser.name" required>
+      </mat-form-field>
+
+      <mat-form-field class="conten" fxFlex="50">
+        <mat-label class="contenlabel" for="email">E-mail</mat-label>
+        <input type="email" matInput id="email" name="email" [(ngModel)]="objUser.email" required>
+      </mat-form-field>
+
+      <mat-form-field class="conten" fxFlex="50">
+        <mat-label class="contenlabel" for="password">Password</mat-label>
+        <input type="password" matInput id="password" name="password" [(ngModel)]="objUser.password" required>
+      </mat-form-field><br>
+
+      <mat-form-field class="conten" fxFlex="50">
+        <mat-label class="contenlabel" for="role">Role</mat-label>
+        <mat-select class="conten" id="role" name="role" [(ngModel)]="objUser.role" required>
+          <mat-option class="conten" *ngFor="let op of options" [value]="op.value">
+            {{op.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </div>
+    <button class="contenButton" type="submit" mat-raised-button color="primary" [disabled]="!createUser.form.valid">Add
+      user</button>
+  </form>
+
+</ng-container>
+<ng-template #elseTemplate>
+  <div class="noAdmin">
+    <p>Sorry! you aren't admin</p>
+    <img class="img" src="../../../../assets/img/prohibido.png" alt="">
+  </div>
+
+</ng-template>
