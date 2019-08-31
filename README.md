@@ -1,27 +1,64 @@
-# ToDoList
+# This is Olimac Task
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.3.
+little Web App to admin task and users
 
-## Development server
+This app has the following features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# When you access as ADMIN_ROLE
+1. Crud of user
+2. User details( as to which task he belongs)
+4. CRUD of taks
+5. task details( as description, users on that task, remove user from a task, add user from a task )
+4. find task (you can find task bt state "open, in-progress, completed, archived")
+5. plus: archive a task, when a user puts the task as completed it appears
+   in this section to be archived
 
-## Code scaffolding
+#When you access as USER_ROLE
+1. THE ONLY THAT YOU CAN SEE WHEN YOU have USER ROLE is your tasks.
+    in this section you can change the state of your task to "OPEN, IN-PROGRESS, COMPLETED"
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Getting Started
+1. download the repository of back and front
 
-## Build
+#Backend:
+1. in the BACKEND folder run:
+```
+npm install
+```
+```
+nodemon server/server
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+#FRONTEND:
+1. in the to-do-list folder run:
+```
+npm install
+```
+```
+ng serve --open
+```
 
-## Running unit tests
+#valid users
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## please login with:
+ADMIN_ROLE: admin@admin.com
+Password: 1234567
 
-## Running end-to-end tests
+then if you want you can create other USER ADMIN
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+        
+## Built With
 
-## Further help
+* Angular
+* Angular material
+* lazy load
+* nodejs
+* express
+* jwt
+* bcrypt
+* and others dependencies
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Authors
+
+* **ROBERTO RESTREPO PEÑA**
